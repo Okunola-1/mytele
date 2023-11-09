@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#phone{
+    width: 450px;
+    height: 550px;
+    /* background-color: black; */
+    margin-left: 450px; 
+    border: 25px solid rgb(141, 38, 38);
+    border-radius: 15px;
+    /* background-image:; 
+    background-repeat: no-repeat;
+     background-size: cover;  */
+}
+#diff{
+        position: absolute;
+        left: 650px;
+        top: 70px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 900;
+        font-size: xx-large;
+        /* color: rgb(116, 13, 13); */
+}
+#date{
+    position: absolute;
+        left: 630px;
+        top: 100px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 900;
+        font-size: xx-large;
+        /* color: rgb(116, 13, 13); */
+}
+#off{
+    height: 30px;
+        width: 25px;
+        background-color: rgba(110, 8, 8, 0.664);
+        position: absolute;
+        left: 458px;
+        bottom: 455px;
+}
+#on{
+    height: 30px;
+        width: 25px;
+        background-color: rgba(110, 8, 8, 0.664);
+        position: absolute;
+        left: 458px;
+        bottom: 420px;
+}
+/* #move{
+    display: flex;
+    position: absolute;
+    left: 0;
+} */
+</style>
+<body>
+    <div id="phone">
+    <div id="diff">
+        <span id="p5"></span>
+        <span id="p4"></span>
+        <span id="p3"></span>
+    </div>
+    <div id="date">
+        <span id="day"></span>
+        <span id="month"></span>
+        <span id="year"></span>
+       </div>
+</div>
+<div id="move">
+    <button id="on" onclick="off()">on</button>
+<button id="off" onclick="on()">off</button>
+    </div>
+</body>
+</html>
+<script>
+    let p4 = document.getElementById("p4");
+    let p5 = document.getElementById("p5");
+    let day = document.getElementById("day");
+    let month = document.getElementById("month");
+    let year = document.getElementById("year");
+
+    setInterval(()=>{
+        let date1 = new Date
+        p3.innerHTML = `${date1.getSeconds()} `;
+        p4.innerHTML = `${date1.getMinutes()} : `;
+        p5.innerHTML = `${date1.getHours()} :`;
+    })
+    setInterval(()=>{
+        let date2 = new Date
+        day.innerHTML= `${date2.getDate()} /`;
+        month.innerHTML= `${date2.getMonth()} / `;
+        year.innerHTML= `${date2.getFullYear()} `;
+    })
+
+    function on(){
+        if(phone.style.backgrounColor === "white"){
+            phone.style.backgroundColor = "white"
+        phone.style.color = "black "
+        }else{phone.style.backgroundColor = "black"
+          phone.style.color = "black"
+
+        //   document.getElementById("on").style.display = "none"
+        //   document.getElementById("off").style.display = "block"
+    }}
+
+    function off(){
+        if(phone.style.backgrounColor === "black"){
+            phone.style.backgroundColor = "black"
+            phone.innerHTML = ""
+        phone.style.color = "white"
+        }else{phone.style.backgroundColor = "white"
+          phone.style.color = "black"
+
+        //   document.getElementById("off").style.display = "none"
+        //   document.getElementById("on").style.display = "block"
+    }}
+
+</script>
